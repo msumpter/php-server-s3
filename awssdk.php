@@ -90,9 +90,9 @@ function uploadFiles($bucket, $prefix="") {
     return $info;
 }
 
-function deleteFiles($bucket) {
+function deleteFiles($bucket, $prefix="") {
     global $s3;
-    $file_name = isset($_REQUEST['file']) ? basename(stripslashes($_REQUEST['file'])) : null;
+    $file_name = $prefix.(isset($_REQUEST['file']) ? basename(stripslashes($_REQUEST['file'])) : null);
     $s3->delete_object($bucket, $file_name);
     $success = "";
     
