@@ -9,7 +9,7 @@
  * http://www.opensource.org/licenses/MIT
  */
  
-require_once 'sdk.class.php';
+require_once 'aws-sdk-php/sdk.class.php';
 $s3 = new AmazonS3();
 
 
